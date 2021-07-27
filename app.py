@@ -9,7 +9,7 @@ model = pickle.load(open('flight_rf.pkl','rb'))
 
 @app.route('/')
 def home():
-    return render_template('indec.html')
+    return render_template('index.html')
 
 @app.route('/submit',methods=['POST'])
 def results():
@@ -22,6 +22,6 @@ def results():
     df=pd.get_dummies(df,columns=['Airline','Source','Destination'],drop_first=True)
     prediction= model.predict(df)
     output = round(prediction[0],2)
-    return render_template('indec.html', prediction_text= 'The Estimated Price for your flight is Rs {}'.format(output))
+    return render_template('index.html', prediction_text= 'The Estimated Price for your flight is Rs {}'.format(output))
 if __name__ == '__main__':
     app.run()
