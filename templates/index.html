@@ -1,0 +1,25 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}">
+
+</script>
+</head>
+<body>
+
+<h2>HTML Form</h2>
+<form action="/submit" method="POST">
+
+<label for="Science"> Science: </label><br>
+<input type ="text" id = "science" name = "science" value = "0"><br>
+
+<label for="Statistics"> Statistics: </label><br>
+<input type ="text" id = "Statistics" name = "Statistics" value = "0"><br>
+
+<label for="Maths"> Maths: </label><br>
+<input type ="text" id = "Maths" name = "Maths" value = "0"><br><br>
+<input type="submit" value="Submit">
+</form>
+   
+</body>
+</html>
